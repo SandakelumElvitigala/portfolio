@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SandakelumElvitigala</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-dark bg-transparent text-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white;">Don Sandakelum Elvitigala</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active cbtn" aria-current="true" aria-label="Slide 1">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="cbtn"
+                        aria-label="Slide 2">
+                        <a class="nav-link" href="#">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-disabled="true">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-container">
+        <ul class="menu active" id="menu">
+            <div class="toggle active" id="menuheader" onclick="toggleDiv()">
+                <ion-icon name="add-outline" class=""></ion-icon>
+            </div>
+
+            <li style="--i:0" class="active tooltip" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                class="active cbtn" aria-current="true" aria-label="Slide 1">
+                <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                <span class="tooltiptext" onclick="colorChange1()">Home</span>
+            </li>
+            <li style="--i:1" class="tooltip tt1" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                class="cbtn" aria-label="Slide 2">
+                <a href="#"><ion-icon name="school-outline"></ion-icon></a>
+                <span class="tooltiptext" onclick="colorChange2()">Education</span>
+            </li>
+            <li style="--i:2" class="tooltip tt2" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                class="cbtn" aria-label="Slide 3">
+                <a href="#"><ion-icon name="medal-outline"></ion-icon></a>
+                <span class="tooltiptext" onclick="colorChange3()">Skills</span>
+            </li>
+            <li style="--i:3" class="tooltip tt3" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                class="cbtn" aria-label="Slide 4">
+                <a href="#"><ion-icon name="folder-outline"></ion-icon></a>
+                <span class="tooltiptext" onclick="colorChange4()">Portfolio</span>
+            </li>
+            <li style="--i:4" class="tooltip tt4" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                class="cbtn" aria-label="Slide 5">
+                <a href="#"><ion-icon name="documents-outline"></ion-icon></a>
+                <span class="tooltiptext" onclick="colorChange5()">CV</span>
+            </li>
+            <li style="--i:5" class="tooltip tt5" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                class="cbtn" aria-label="Slide 6">
+                <a href="#"><ion-icon name="call-outline"></ion-icon></a>
+                <span class="tooltiptext" onclick="colorChange6()">Contact Me</span>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <!--Body-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="false" style="width: 100vw;margin: 0;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active cbtn"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="cbtn"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="cbtn"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" class="cbtn"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" class="cbtn"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" class="cbtn"
+                aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <!--Page 01-->
+                <div class="row top" style="width: 100vw;height: 100vh;margin-left: -1.5vw;">
+                    <div class="col txtcol text-end">
+                        <h4 class="h4">Hey I'm</h4>
+                        <h3 class="h3">Don</h4>
+                            <h1 class="h1">Sandakelum Elvitigala</h1>
+                            <h3><span class="sp1"></span></h3>
+                            <p>I will achieve any target even within a tough and challenging problems by studying them
+                                and managing the situation. I will put my full effort to do things, which I'm reponsible
+                                for. I always give the first place for responsibilities and the efficiency of a work,
+                                which can be done by me....</p>
+                    </div>
+                    <div class="col">
+                        <center>
+                            <div class="imgcol">
+                                <div class="box">
+                                    <img src="assests/me.jpg" alt="image" class="image">
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+
+                </div>
+                <!--/Page 01-->
+
+            </div>
+            <div class="carousel-item ci1">
+
+                <!--PAGE 02-->
+                <section class="design-section">
+                    <div class="timeline">
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-component timeline-content">
+                            <h3>Primary Education ( 2009 - 2014 )</h3>
+                            <p>From WP/HO/Kosgama Sumedha Vidyalaya. <br> 179 for 2014 Grade 05 Scholarship Examination
+                            </p>
+                        </div>
+                        <div class="timeline-component timeline-content">
+                            <h3>GCE O/L ( 2019 )</h3>
+                            <p>From R/Eheliyagoda Central Collage. <br> 'A passes : 8' <br> 'C passes : 1'</p>
+                        </div>
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class=" timeline-component timeline-content">
+                            <h3>GCE A/L ( 2023(24) )</h3>
+                            <p>From R/Eheliyagoda Central Collage. <br> Common Stream <br> 'C passes : Physics , ICT'
+                                <br> 'S passes : Combined Mathematics'
+                            </p>
+                        </div>
+                        <div class=" timeline-component timeline-content">
+                            <h3>PCB Designing Webinar Series ( CIRCUITO 2021 )</h3>
+                            <p>Conducted by <strong>IEEE , IEEE Student branch of SLTC , Institute of
+                                    Innovatoins</strong></p>
+                        </div>
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class=" timeline-component timeline-content">
+                            <h3>Certification for Web Development (2022)</h3>
+                            <p>Turnkey IT Campus, Bambalapitiya. <br>
+                                Grade achieved : A+</p>
+                            <h5>Content Followed :</h5>
+                            <ul>
+                                <li><img src="assests/htmlimg.png" alt="HTML" style="width: 50px;"></li>
+                                <li><img src="assests/cssimg.avif" alt="CSS" style="width: 50px;"></li>
+                                <li><img src="assests/phpimg.webp" alt="PHP" style="width: 50px;"></li>
+                                <li><img src="assests/sql.png" alt="SQL" style="width: 50px;"></li>
+                            </ul>
+                        </div>
+                        <div class=" timeline-component timeline-content">
+                            <h3>Certification for Python Basics (2021)</h3>
+                            <p>Open Learning Platform - University of Moratuwa.</p>
+                        </div>
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-empty">
+                        </div>
+
+                        <div class="timeline-middle">
+                            <div class="timeline-circle"></div>
+                        </div>
+                        <div class=" timeline-component timeline-content">
+                            <h3>Certification for Python Basics (2021)</h3>
+                            <p>Open Learning Platform - University of Moratuwa.</p>
+                        </div>
+                    </div>
+                </section>
+                <!--/PAGE 02-->
+
+            </div>
+            <div class="carousel-item i3">
+
+                <!--Page 03-->
+                <div class="container skillcon" style="width: 100vw;height: 100vh;margin-left: -1.5vw;">
+
+                    <div class="card">
+                        <div class="percent" data-color="#04fc43" data-number="85">
+                            <div class="dot" id="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" class="progress"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2>85 <span>%</span></h2>
+                                <p>HTML</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="percent" data-color="#04fc43" data-number="85">
+                            <div class="dot" id="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" class="progress"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2>85 <span>%</span></h2>
+                                <p>CSS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="percent" data-color="#04fc43" data-number="65">
+                            <div class="dot" id="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" class="progress"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2>65 <span>%</span></h2>
+                                <p>jAVA SCRIPT</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="percent" data-color="#04fc43" data-number="60">
+                            <div class="dot" id="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" class="progress"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2>60 <span>%</span></h2>
+                                <p>JAVA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="percent" data-color="#04fc43" data-number="75">
+                            <div class="dot" id="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" class="progress"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2>75 <span>%</span></h2>
+                                <p>PHP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="percent" data-color="#04fc43" data-number="85">
+                            <div class="dot" id="dot"></div>
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" class="progress"></circle>
+                            </svg>
+                            <div class="number">
+                                <h2>85 <span>%</span></h2>
+                                <p>MY SQL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/Page 03-->
+
+            </div>
+            <div class="carousel-item i4 ">
+
+                <!--Page 04-->
+                <div class="container portcon">
+                    <div class="row">
+                        <div class="col-md lft">
+                            <center>
+                                <br>
+                                <h3>Web Projects</h3>
+                                <div class="accordion accordion-flush bg-dark acc" id="accordionFlushWebProjects">
+                                    <div class="accordion-item bg-dark">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseWebOne"
+                                                aria-expanded="false" aria-controls="flush-collapseWebOne">
+                                                Tuniverse Productions ( Under Developing )
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseWebOne" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushWebProjects">
+                                            <div class="accordion-body">
+                                                A website made for a music production company... <br> link : <a
+                                                    href="https://sandakelumelvitigala.github.io/Tuniverse/">Take a
+                                                    Visit</a><br><br><span>Used : HTML CSS PHP MYSQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseWebTwo"
+                                                aria-expanded="false" aria-controls="flush-collapseWebTwo">
+                                                Future Technologies ( Under Developing )
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseWebTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushWebProjects">
+                                            <div class="accordion-body">
+                                                A website made for a laptop supplier and repair
+                                                company...<br><br><span>Used : HTML CSS PHP MYSQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseWebThree"
+                                                aria-expanded="false" aria-controls="flush-collapseWebThree">
+                                                Skhole ( Under Developing )
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseWebThree" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushWebProjects">
+                                            <div class="accordion-body">
+                                                An online learning platform with new features...<br><br><span>Used :
+                                                    HTML CSS PHP MYSQL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <h3>Software Projects</h3>
+                                <p><i>Not yet</i></p>
+                            </center>
+                        </div>
+                        <div class="col-md rght">
+                            <center>
+                                <h3>Path through Music</h3>
+                                <div class="accordion accordion-flush" id="accordionFlushMusic">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseMusicTwo"
+                                                aria-expanded="false" aria-controls="flush-collapseMusicTwo">
+                                                Cover Songs
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseMusicTwo" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushMusic">
+                                            <div class="accordion-body bdy">
+                                                <div class="row">
+                                                    <iframe width="560" height="300"
+                                                        src="https://www.youtube.com/embed/p_OzYrTZ86Q?si=h9lNyiy1ksgeDAU_"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        referrerpolicy="strict-origin-when-cross-origin"
+                                                        allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                                <div class="row">
+                                                    <iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/kLDyH3x898w?si=Ev6ZX4IjCtiygAd5"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        referrerpolicy="strict-origin-when-cross-origin"
+                                                        allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                                <div class="row">
+                                                    <iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/T48SOIh_0wM?si=0VmRtv7b4iSsi4aq"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        referrerpolicy="strict-origin-when-cross-origin"
+                                                        allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                                <div class="row">
+                                                    <iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/mBkazGh2CeY?si=ms6wHnr0gP1nCRXJ"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        referrerpolicy="strict-origin-when-cross-origin"
+                                                        allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseMusicThree"
+                                                aria-expanded="false" aria-controls="flush-collapseMusicThree">
+                                                Original Songs
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseMusicThree" class="accordion-collapse collapse"
+                                            data-bs-parent="#accordionFlushMusic">
+                                            <div class="accordion-body">
+                                                <iframe width="560" height="315"
+                                                    src="https://www.youtube.com/embed/6kXf51aLyHE?si=3dowMVUjPieLvDSR"
+                                                    title="YouTube video player" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+                <!--/Page 04-->
+
+            </div>
+            <div class="carousel-item i5">
+
+                <!--Page 05-->
+                <div class="container">
+                    <div class="row">
+                        <center>
+                            <div class="col pdf-container">
+                                <div class="row">
+                                    <img src="assests/cv1.png" alt="">
+                                </div>
+                                <div class="row">
+                                    <img src="assests/cv2.png" alt="">
+                                </div>
+                                <div class="row">
+                                    <img src="assests/cv3.png" alt="">
+                                </div>
+                                <div class="row">
+                                    <img src="assests/cv4.png" alt="">
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <!--/Page 05-->
+
+            </div>
+            <div class="carousel-item i6">
+
+                <!--Page 05-->
+                <div class="container">
+                    <div class="row">
+                        
+                            <div class="container cont">
+                                <div class="row controw">
+                                    <div class="col">
+
+                                        <div class="row">
+                                            <div class="col fst">
+                                                <div class="row"><i class="fa-solid fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;<span> :&nbsp;&nbsp;&nbsp;&nbsp; +94 78 608 0817</span></i></div><br>
+                                                <div class="row"><i class="fa-brands fa-whatsapp">&nbsp;&nbsp;&nbsp;&nbsp;<span> :&nbsp;&nbsp;&nbsp;&nbsp; +94 78 608 0817</span></i></div><br>
+                                                <div class="row"><i class="fa-solid fa-envelope">&nbsp;&nbsp;&nbsp;&nbsp;<span> :&nbsp;&nbsp;&nbsp;&nbsp; kalpaselvitigala@gmail.com</span></i></div>
+                                                <br><br><br>
+                                                <div class="row btnrow">
+                                                    <div class="col"><a href="#"><button class="fb"><i class="fa-brands fa-facebook"></i></button></a></div>
+                                                    <div class="col"><a href="#"><button class="instr"><i class="fa-brands fa-instagram"></i></button></a></div>
+                                                    <div class="col"><a href="#"><button class="yt"><i class="fa-brands fa-youtube"></i></button></a></div>
+                                                    <div class="col"><a href="#"><button class="thr"><i class="fa-brands fa-threads"></i></button></a></div>
+                                                    <div class="col"><a href="#"><button class="git"><i class="fa-brands fa-github"></i></button></a></div>
+                                                    <!--div class="col"><a href="#"><button></button></a></div-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </div>
+                </div>
+
+                <!--/Page 05-->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row skill"></div>
+
+
+
+
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const percentElements = document.querySelectorAll('.percent');
+            percentElements.forEach(percentElement => {
+                const numbValue = percentElement.getAttribute('data-number');
+                const colorValue = percentElement.getAttribute('data-color');
+                const dotElement = document.querySelector('.dot');
+                const strokeDashoffset = 440 - (440 * numbValue) / 100;
+                const circle = percentElement.querySelector('svg .progress');
+                dotElement.style.setProperty('--clr', colorValue);
+                dotElement.style.setProperty('--num', numbValue);
+                if (circle) {
+                    circle.style.stroke = colorValue;
+                    circle.style.strokeDashoffset = strokeDashoffset;
+                    //dotElement.style.background = colorValue;
+                } else {
+                    console.error('Circle element not found');
+                }
+
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const percentElements = document.querySelectorAll('.percent');
+
+            percentElements.forEach(percentElement => {
+                const numbValue = percentElement.getAttribute('data-number');
+                const colorValue = percentElement.getAttribute('data-color');
+                const dotElement = percentElement.querySelector('.dot'); // Select .dot within each .percent
+
+                if (dotElement) {
+                    // Set styles for dotElement
+                    dotElement.style.setProperty('--clr', colorValue);
+                    dotElement.style.setProperty('--num', numbValue);
+
+                    // Additional styling or animations for dotElement if needed
+                    dotElement.style.animation = 'animateDot 2s linear forwards';
+
+                    // You can also handle other styles or animations here
+
+                } else {
+                    console.error('Dot element not found for percent element:', percentElement);
+                }
+
+                // Further processing for circle or other elements if needed
+                const strokeDashoffset = 440 - (440 * numbValue) / 100;
+                const circle = percentElement.querySelector('svg .progress');
+                if (circle) {
+                    circle.style.stroke = colorValue;
+                    circle.style.strokeDashoffset = strokeDashoffset;
+                } else {
+                    console.error('Circle element not found for percent element:', percentElement);
+                }
+            });
+        });
+
+
+
+
+
+
+
+
+        let menuToggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+
+        function toggleDiv() {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        const list = document.querySelectorAll('li');
+        function activateLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+
+        list.forEach((item) => item.addEventListener('click', activateLink));
+
+
+
+
+
+    </script>
+</body>
+
+</html>
