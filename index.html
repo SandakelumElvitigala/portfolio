@@ -51,7 +51,7 @@
                         <a class="nav-link" href="#">Skills</a>
                     </li>
                     <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    class="active cbtn" aria-current="true" aria-label="Slide 4">
+                        class="active cbtn" aria-current="true" aria-label="Slide 4">
                         <a class="nav-link" href="#">Portfolio</a>
                     </li>
                     <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" class="cbtn"
@@ -59,7 +59,7 @@
                         <a class="nav-link" href="#">CV</a>
                     </li>
                     <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
-                    class="active cbtn" aria-current="true" aria-label="Slide 6">
+                        class="active cbtn" aria-current="true" aria-label="Slide 6">
                         <a class="nav-link" aria-disabled="true">Contact Me</a>
                     </li>
                 </ul>
@@ -517,32 +517,43 @@
                 <!--Page 05-->
                 <div class="container">
                     <div class="row">
-                        
-                            <div class="container cont">
-                                <div class="row controw">
-                                    <div class="col">
 
-                                        <div class="row">
-                                            <div class="col fst">
-                                                <div class="row"><i class="fa-solid fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;<span> :&nbsp;&nbsp;&nbsp;&nbsp; +94 78 608 0817</span></i></div><br>
-                                                <div class="row"><i class="fa-brands fa-whatsapp">&nbsp;&nbsp;&nbsp;&nbsp;<span> :&nbsp;&nbsp;&nbsp;&nbsp; +94 78 608 0817</span></i></div><br>
-                                                <div class="row"><i class="fa-solid fa-envelope">&nbsp;&nbsp;&nbsp;&nbsp;<span> :&nbsp;&nbsp;&nbsp;&nbsp; kalpaselvitigala@gmail.com</span></i></div>
-                                                <br><br><br>
-                                                <div class="row btnrow">
-                                                    <div class="col"><a href="#"><button class="fb"><i class="fa-brands fa-facebook"></i></button></a></div>
-                                                    <div class="col"><a href="#"><button class="instr"><i class="fa-brands fa-instagram"></i></button></a></div>
-                                                    <div class="col"><a href="#"><button class="yt"><i class="fa-brands fa-youtube"></i></button></a></div>
-                                                    <div class="col"><a href="#"><button class="thr"><i class="fa-brands fa-threads"></i></button></a></div>
-                                                    <div class="col"><a href="#"><button class="git"><i class="fa-brands fa-github"></i></button></a></div>
-                                                    <!--div class="col"><a href="#"><button></button></a></div-->
-                                                </div>
+                        <div class="container cont">
+                            <div class="row controw">
+                                <div class="col">
+
+                                    <div class="row">
+                                        <div class="col fst">
+                                            <div class="row"><i class="fa-solid fa-phone">&nbsp;&nbsp;&nbsp;&nbsp;<span>
+                                                        :&nbsp;&nbsp;&nbsp;&nbsp; +94 78 608 0817</span></i></div><br>
+                                            <div class="row"><i
+                                                    class="fa-brands fa-whatsapp">&nbsp;&nbsp;&nbsp;&nbsp;<span>
+                                                        :&nbsp;&nbsp;&nbsp;&nbsp; +94 78 608 0817</span></i></div><br>
+                                            <div class="row"><i
+                                                    class="fa-solid fa-envelope">&nbsp;&nbsp;&nbsp;&nbsp;<span>
+                                                        :&nbsp;&nbsp;&nbsp;&nbsp; kalpaselvitigala@gmail.com</span></i>
+                                            </div>
+                                            <br><br><br>
+                                            <div class="row btnrow">
+                                                <div class="col"><a href="#"><button class="fb"><i
+                                                                class="fa-brands fa-facebook"></i></button></a></div>
+                                                <div class="col"><a href="#"><button class="instr"><i
+                                                                class="fa-brands fa-instagram"></i></button></a></div>
+                                                <div class="col"><a href="#"><button class="yt"><i
+                                                                class="fa-brands fa-youtube"></i></button></a></div>
+                                                <div class="col"><a href="#"><button class="thr"><i
+                                                                class="fa-brands fa-threads"></i></button></a></div>
+                                                <div class="col"><a href="#"><button class="git"><i
+                                                                class="fa-brands fa-github"></i></button></a></div>
+                                                <!--div class="col"><a href="#"><button></button></a></div-->
                                             </div>
                                         </div>
-                                       
                                     </div>
+
                                 </div>
                             </div>
-                       
+                        </div>
+
                     </div>
                 </div>
 
@@ -552,7 +563,7 @@
         </div>
     </div>
 
-    
+
 
 
 
@@ -647,6 +658,36 @@
         list.forEach((item) => item.addEventListener('click', activateLink));
 
 
+        const carousel = document.querySelector('.carousel-inner');
+        let startX, currentX, endX;
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+
+        function setTransform() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+            currentX = e.touches[0].clientX;
+        });
+
+        carousel.addEventListener('touchend', () => {
+            endX = currentX;
+
+            if (startX > endX + 50 && currentIndex < items.length - 1) {
+                // Swipe left
+                currentIndex++;
+            } else if (startX < endX - 50 && currentIndex > 0) {
+                // Swipe right
+                currentIndex--;
+            }
+
+            setTransform();
+        });
 
 
 
