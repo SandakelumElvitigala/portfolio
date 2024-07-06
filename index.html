@@ -34,7 +34,7 @@
             <a class="navbar-brand" href="#" style="color: white;">Don Sandakelum Elvitigala</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <ion-icon name="add-outline" class="cross" onclick="toggleDiv()"></ion-icon>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
@@ -44,13 +44,23 @@
                     </li>
                     <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="cbtn"
                         aria-label="Slide 2">
+                        <a class="nav-link" href="#">Education</a>
+                    </li>
+                    <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="cbtn"
+                        aria-label="Slide 3">
                         <a class="nav-link" href="#">Skills</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    class="active cbtn" aria-current="true" aria-label="Slide 4">
                         <a class="nav-link" href="#">Portfolio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-disabled="true">Contact</a>
+                    <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" class="cbtn"
+                        aria-label="Slide 5">
+                        <a class="nav-link" href="#">CV</a>
+                    </li>
+                    <li class="nav-item" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                    class="active cbtn" aria-current="true" aria-label="Slide 6">
+                        <a class="nav-link" aria-disabled="true">Contact Me</a>
                     </li>
                 </ul>
             </div>
@@ -542,8 +552,7 @@
         </div>
     </div>
 
-    <div class="row skill"></div>
-
+    
 
 
 
@@ -615,10 +624,18 @@
 
         let menuToggle = document.querySelector('.toggle');
         let menu = document.querySelector('.menu');
+        let cross = document.querySelector('.cross');
+        let navbarNav = document.querySelector('.navbar-nav');
+
 
         function toggleDiv() {
             menu.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            cross.classList.toggle('active');
+        }
+        function toggleDiv1() {
+            cross.classList.toggle('active');
+            navbarNav.classList.toggle('active');
         }
 
         const list = document.querySelectorAll('li');

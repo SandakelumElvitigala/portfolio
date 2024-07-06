@@ -134,6 +134,7 @@ body {
 }
 
 
+
 @keyframes frame-enter {
     0% {
         clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
@@ -527,6 +528,10 @@ ul li a:hover:before {
 }
 
 
+.carousel-item {
+    overflow-y: scroll;
+}
+
 /*------------*/
 .i3 {
     overflow-y: scroll;
@@ -795,22 +800,98 @@ ul li a:hover:before {
     transition: background 0.3s ease;
 }
 
-.yt{
+.yt {
     background: linear-gradient(45deg, #ff0000, #ff1313, #d71e1e, #e00101, #ffffff53);
     transition: background 0.3s ease;
 }
 
-.thr{
+.thr {
     background: linear-gradient(45deg, #201f1f, #1c1b1b93, #0a0a0a, #00000045, #060606);
     transition: background 0.3s ease;
 }
 
-.git{
-    background: linear-gradient(60deg, #201f1f, #1c1b1b93, #0a0a0a, #060606,#00000045);
+.git {
+    background: linear-gradient(60deg, #201f1f, #1c1b1b93, #0a0a0a, #060606, #00000045);
     transition: background 0.3s ease;
 }
 
-.fst button i:hover{
+.fst button i:hover {
     margin: 15px;
     transition: 0.5s;
+}
+
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+@media (max-width: 550px) {
+
+    .menu-container,
+    .toggle {
+        visibility: hidden;
+    }
+
+    #menu li {
+        visibility: hidden;
+    }
+
+    .cross {
+        font-size: 40px;
+        color: white;
+        transition: transform 0.5s ease, box-shadow 0.8s ease;
+    }
+
+    .cross.active {
+        transform: rotate(315deg);
+        box-shadow: 0 0 0 100vw #020202e6;
+        border-radius: 50%;
+        color: rgb(250, 248, 248);
+        background: black;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 200px;
+        transition: transform 01s ease, opacity 0.8s ease;
+    }
+
+    .navbar-nav a {
+        color: white;
+        letter-spacing: 2px;
+        line-height: 40px;
+    }
+
+    .navbar-nav.active {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 1;
+    }
+
+    .txtcol {
+        margin-top: 12vh;
+    }
+
+    .carousel-item {
+        overflow-y: scroll;
+    }
+
+    .txtcol h3 {
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        z-index: 10;
+    }
+
+    .txtcol h1 {
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        z-index: 10;
+    }
+
+    .txtcol p {
+        margin: 2vw;
+        color: white;
+    }
 }
