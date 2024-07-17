@@ -658,37 +658,28 @@
         list.forEach((item) => item.addEventListener('click', activateLink));
 
 
-        const carousel = document.querySelector('.carousel-inner');
-        let startX, currentX, endX;
-        let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
+        
+        var carousel = document.getElementById('carouselExampleIndicators');
+        var touchstartX = 0;
+        var touchendX = 0;
 
-        function setTransform() {
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        function handleGesture() {
+            if (touchendX < touchstartX) {
+                $(carousel).carousel('next');
+            }
+            if (touchendX > touchstartX) {
+                $(carousel).carousel('prev');
+            }
         }
 
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
+        carousel.addEventListener('touchstart', function(event) {
+            touchstartX = event.changedTouches[0].screenX;
+        }, false);
 
-        carousel.addEventListener('touchmove', (e) => {
-            currentX = e.touches[0].clientX;
-        });
-
-        carousel.addEventListener('touchend', () => {
-            endX = currentX;
-
-            if (startX > endX + 50 && currentIndex < items.length - 1) {
-                // Swipe left
-                currentIndex++;
-            } else if (startX < endX - 50 && currentIndex > 0) {
-                // Swipe right
-                currentIndex--;
-            }
-
-            setTransform();
-        });
-
+        carousel.addEventListener('touchend', function(event) {
+            touchendX = event.changedTouches[0].screenX;
+            handleGesture();
+        }, false);
 
 
     </script>
